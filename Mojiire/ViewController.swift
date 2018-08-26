@@ -14,7 +14,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    // 内蔵カメラで撮影
+    @IBAction func tapCameraButton(_ sender: AnyObject) {
+        // カメラが利用可能か
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let _controller = UIImagePickerController()
+            _controller.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            
+            _controller.allowsEditing = true
+            _controller.sourceType = UIImagePickerControllerSourceType.camera
+            self.present(_controller, animated: true, completion: nil)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
