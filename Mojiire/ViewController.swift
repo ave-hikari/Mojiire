@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     // 内蔵カメラで撮影
     @IBAction func tapCameraButton(_ sender: AnyObject) {
+        print(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera))
         // カメラが利用可能か
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let _controller = UIImagePickerController()

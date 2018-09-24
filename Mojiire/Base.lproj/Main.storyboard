@@ -40,12 +40,37 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-Rg-O1A">
+                                <rect key="frame" x="55" y="192" width="270" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="library" translatesAutoresizingMaskIntoConstraints="NO" id="U6O-DS-UJx">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="BmX-y7-tIw"/>
+                                            <constraint firstAttribute="height" constant="100" id="WXm-KN-XRE"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hi-W1-H68">
+                                        <rect key="frame" x="120" y="21" width="150" height="58"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                        <state key="normal" title="library">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngr-ZC-5Fo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.97756574273740138" blue="0.97013007017087183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SOA-u0-dQv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="16g-G7-YPU"/>
+                            <constraint firstItem="gUu-Rg-O1A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="8XK-2q-O31"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SOA-u0-dQv" secondAttribute="trailing" constant="50" id="GFx-w9-lAu"/>
+                            <constraint firstItem="gUu-Rg-O1A" firstAttribute="top" secondItem="SOA-u0-dQv" secondAttribute="bottom" constant="22" id="Jf0-Vq-vA7"/>
                             <constraint firstItem="SOA-u0-dQv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="PWc-yX-OX5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gUu-Rg-O1A" secondAttribute="trailing" constant="50" id="yN9-sI-EuQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -57,5 +82,6 @@
     </scenes>
     <resources>
         <image name="camera" width="200" height="175"/>
+        <image name="library" width="200" height="175"/>
     </resources>
 </document>
