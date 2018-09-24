@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             self.present(_controller, animated: true, completion: nil)
         }
     }
+    
     @IBAction func tapLibraryButton(_ sender: AnyObject) {
         // ライブラリからイメージ取得
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
@@ -44,6 +45,25 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // choose Image
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        // 遷移するViewを定義
+        let drawView = storyboard!.instantiateViewController(withIdentifier: "nextView")
+        self.present(drawView,animated: true, completion: nil)
+        
+        //選択時トリミングした画像を使用する
+        if info[UIImagePickerControllerEditedImage] != nil {
+//            let image = info[UIImagePickerControllerEditedImage] as! UIImage
+//            drawView.tempImage = image
+//            print(image)
+        }
+        picker.dismiss(animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(drawView, animated: true)
+        
     }
 
 
