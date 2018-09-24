@@ -28,6 +28,19 @@ class ViewController: UIViewController {
             self.present(_controller, animated: true, completion: nil)
         }
     }
+    @IBAction func tapLibraryButton(_ sender: AnyObject) {
+        // ライブラリからイメージ取得
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let _controller = UIImagePickerController()
+            _controller.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            // 正方形にトリミングする
+            _controller.allowsEditing = true
+            _controller.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.present(_controller, animated: true, completion: nil)
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
