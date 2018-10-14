@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         // ライブラリからイメージ取得
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let _controller = UIImagePickerController()
-            _controller.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            _controller.delegate = self
             // 正方形にトリミングする
             _controller.allowsEditing = true
             _controller.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -46,26 +46,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // choose Image
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        // 遷移するViewを定義
-        let drawView = storyboard!.instantiateViewController(withIdentifier: "nextView")
-        self.present(drawView,animated: true, completion: nil)
-        
-        //選択時トリミングした画像を使用する
-        if info[UIImagePickerControllerEditedImage] != nil {
-//            let image = info[UIImagePickerControllerEditedImage] as! UIImage
-//            drawView.tempImage = image
-//            print(image)
-        }
-        picker.dismiss(animated: true, completion: nil)
-        
-        self.navigationController?.pushViewController(drawView, animated: true)
-        
+}
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // キャンセルボタンを押された時に呼ばれる
     }
-
-
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // 写真が選択された時に呼ばれる
+        // 遷移するViewを定義
+        let storyboard: UIStoryboard = self.storyboard!
+        let next: UIViewController = storyboard.instantiateViewController(withIdentifier: "DrawViewController")
+        present(next, animated: true, completion: nil)
+    }
 }
 
