@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="48.799999999999997" y="31.934032983508249"/>
         </scene>
-        <!--View Controller-->
+        <!--Draw View Controller-->
         <scene sceneID="Evf-IU-R5B">
             <objects>
-                <viewController storyboardIdentifier="drawView" id="s4P-5o-yBG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="drawView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s4P-5o-yBG" customClass="DrawViewController" customModule="Mojiire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DYm-kp-GGV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

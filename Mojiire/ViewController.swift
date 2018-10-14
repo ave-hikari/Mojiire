@@ -49,16 +49,25 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // キャンセルタップ時
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // キャンセルボタンを押された時に呼ばれる
+        
     }
-    
+    // 写真選択時
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        // 写真が選択された時に呼ばれる
         // 遷移するViewを定義
-        let storyboard: UIStoryboard = self.storyboard!
-        let next: UIViewController = storyboard.instantiateViewController(withIdentifier: "DrawViewController")
-        present(next, animated: true, completion: nil)
+        let nextView: UIViewController = storyboard!.instantiateViewController(withIdentifier: "drawView")
+        present(nextView, animated: true, completion: nil)
+        
+        // トリミングした画像を設定
+        if info[UIImagePickerControllerEditedImage] != nil {
+            let imagePicked = info[UIImagePickerControllerEditedImage] as! UIImage
+//            nextView.tempImage = imagePicked
+//            print(imagePicked)
+        }
+        picker.dismiss(animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
 }
 
