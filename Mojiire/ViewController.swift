@@ -60,7 +60,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // 遷移するViewを定義
         let nextView = storyboard.instantiateViewController(withIdentifier: "drawView") as! DrawViewController
-        present(nextView, animated: true, completion: nil)
         
         // トリミングした画像を設定
         if info[UIImagePickerControllerEditedImage] != nil {
@@ -70,6 +69,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         picker.dismiss(animated: true, completion: nil)
         
+        // NavigationControllerを使ってコードで画面遷移
         self.navigationController?.pushViewController(nextView, animated: true)
     }
 }
