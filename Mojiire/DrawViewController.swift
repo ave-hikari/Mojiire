@@ -10,5 +10,11 @@ import UIKit
 
 class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate {
     
+    @IBOutlet weak var mainImage: UIImageView!
+    
     var tempImage: UIImage!
+    @IBOutlet weak var addText: UITextField!
+    @IBOutlet weak var setText: UIButton!
+    
+    
 }
