@@ -16,5 +16,14 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBOutlet weak var addText: UITextField!
     @IBOutlet weak var setText: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addText.delegate = self as? UITextFieldDelegate
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // ライブラリで選択した画像をimageViewのimageにセット
+        mainImage.image = tempImage
+    }
 }

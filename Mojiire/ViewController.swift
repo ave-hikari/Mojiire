@@ -55,15 +55,18 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
     // 写真選択時
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // 画面遷移設定
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // 遷移するViewを定義
-        let nextView: UIViewController = storyboard!.instantiateViewController(withIdentifier: "drawView")
+        let nextView = storyboard.instantiateViewController(withIdentifier: "drawView") as! DrawViewController
         present(nextView, animated: true, completion: nil)
         
         // トリミングした画像を設定
         if info[UIImagePickerControllerEditedImage] != nil {
             let imagePicked = info[UIImagePickerControllerEditedImage] as! UIImage
-//            nextView.tempImage = imagePicked
-//            print(imagePicked)
+            nextView.tempImage = imagePicked
+            print(imagePicked)
         }
         picker.dismiss(animated: true, completion: nil)
         
