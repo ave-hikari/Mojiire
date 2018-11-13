@@ -49,4 +49,26 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             setText.setTitle("set!", for: UIControlState.normal)
         }
     }
+    
+    // タッチ時
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    // ドラッグ時
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        
+        for touch: AnyObject in touches{
+            let touchLocation = touch.location(in: view)
+            if (self.stampLabel != nil) {
+                self.stampLabel.transform = CGAffineTransform(translationX: touchLocation.x - self.stampLabel.center.x, y: touchLocation.y - self.stampLabel.center.y)
+            }
+        }
+    }
+    
+    // ドラッグ終了時
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
 }
