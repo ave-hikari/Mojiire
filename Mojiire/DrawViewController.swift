@@ -20,6 +20,10 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     var textTempColor: UIColor!
     
+    var inputText: String!
+    
+    var saveButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +39,13 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBAction func tapAddTextBtn(_ sender: Any) {
         // 文字が画面上に設定されている
         if (self.stampLabel != nil) {
+            setText.setTitle("paste!", for: UIControlState.normal)
+            let tempImage = self.drawText(image: mainImage.image!, addText: addText.text!)
+            mainImage.image = tempImage
+            self.stampLabel.removeFromSuperview()
+            self.stampLabel = nil
+            //何度もラベルを画像に貼れるように画像にラベルをセットし終わったらtextFieldを空にする
+            addText.text = nil
             
         } else {
             // デフォルトの配置位置と文字色を設定し addSubView
@@ -46,6 +57,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             textTempColor = self.stampLabel.textColor
             
             self.mainImage.addSubview(self.stampLabel)
+            // セット時にボタンの文言も変更する
             setText.setTitle("set!", for: UIControlState.normal)
         }
     }
@@ -70,5 +82,18 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     // ドラッグ終了時
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+    }
+    
+    func drawText(image:UIImage, addText:String) -> UIImage{
+        self.inputText = addText
+        let font = UIFont.boldSystemFont(ofSize: 50)
+        
+        let imageRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        //空のコンテキスト（保存するための画像）を選択した画像と同じサイズで設定
+        UIGraphicsBeginImageContext(image.size);
+        //そこに描画することを設定
+        image.draw(in: imageRect)
+        
+//        return newImage
     }
 }
