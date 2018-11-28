@@ -84,9 +84,9 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
     }
     
+    // 文字を画面上に設定している状態で[paste]をタップした際にイメージにテキストを描画する
     func drawText(image:UIImage, addText:String) -> UIImage{
         self.inputText = addText
-        let font = UIFont.boldSystemFont(ofSize: 50)
         
         let imageRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         //空のコンテキスト（保存するための画像）を選択した画像と同じサイズで設定
@@ -94,6 +94,22 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         //そこに描画することを設定
         image.draw(in: imageRect)
         
-//        return newImage
+        //ラベルの描画領域を設定
+        let textRect  = CGRect(x: (self.stampLabel.frame.origin.x * image.size.width) / mainImage.frame.width, y: (self.stampLabel.frame.origin.y * image.size.height) / mainImage.frame.height, width: image.size.width - 5, height: image.size.height - 5)
+        // paragraph(段落)のスタイル
+        let textParagraphStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        // ラベルの装飾を設定
+        let textFontAttributes = [
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 50),
+            NSAttributedStringKey.foregroundColor: textTempColor,
+            NSAttributedStringKey.paragraphStyle: textParagraphStyle
+        ]
+        addText.draw(in: textRect, withAttributes: textFontAttributes)
+        
+        // コンテキストをイメージとして生成
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!;
+        // イメージとテキストの合成完了
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
