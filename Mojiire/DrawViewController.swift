@@ -36,7 +36,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         mainImage.image = tempImage
         
         // ナビバーにsaveボタンを設定
-        saveButton = UIBarButtonItem(title: "save", style: .plain, target: self, action: Selector("tappedSaveButton:"))
+        saveButton = UIBarButtonItem(title: "save", style: .plain, target: self, action: Selector(("tapSaveButton:")))
         self.navigationItem.rightBarButtonItem = saveButton
     }
     
@@ -115,5 +115,25 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         // イメージとテキストの合成完了
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    // 作成した画像を保存
+    func tapSaveButton(sender: UIButton) {
+        // UIImage保存
+        UIImageWriteToSavedPhotosAlbum(mainImage!.image!, nil, nil, nil)
+        
+        let saveAlert = UIAlertController(title: nil, message: "画像を保存しました", preferredStyle: .alert)
+        // presentViewControllerでsegueを使わず画面遷移する
+        self.present(saveAlert, animated: true, completion: { () -> Void in
+            // 遅延実行 別スレッドで3秒間遅延させている間アラートを表示する。3秒後にアラートを閉じる
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                // your code here
+                self.dismiss(animated: true, completion: nil)
+                //保存が終わったらメインスレッドで作成したimageViewを消す
+                OperationQueue.main.addOperation({
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
+        } )
     }
 }
