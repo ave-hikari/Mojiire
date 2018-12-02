@@ -34,6 +34,10 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     override func viewDidAppear(_ animated: Bool) {
         // ライブラリで選択した画像をimageViewのimageにセット
         mainImage.image = tempImage
+        
+        // ナビバーにsaveボタンを設定
+        saveButton = UIBarButtonItem(title: "save", style: .plain, target: self, action: Selector("tappedSaveButton:"))
+        self.navigationItem.rightBarButtonItem = saveButton
     }
     
     @IBAction func tapAddTextBtn(_ sender: Any) {
