@@ -36,7 +36,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         mainImage.image = tempImage
         
         // ナビバーにsaveボタンを設定
-        saveButton = UIBarButtonItem(title: "save", style: .plain, target: self, action: Selector(("tapSaveButton:")))
+        saveButton = UIBarButtonItem(title: "save", style: .plain, target: self, action: #selector(DrawViewController.tapSaveButton))
         self.navigationItem.rightBarButtonItem = saveButton
     }
     
@@ -118,7 +118,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     
     // 作成した画像を保存
-    func tapSaveButton(sender: UIButton) {
+    @objc func tapSaveButton(sender: UIButton) {
         // UIImage保存
         UIImageWriteToSavedPhotosAlbum(mainImage!.image!, nil, nil, nil)
         
