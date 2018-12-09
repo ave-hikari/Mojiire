@@ -20,8 +20,6 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     var textTempColor: UIColor!
     
-    var inputText: String!
-    
     var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -41,31 +39,34 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     
     
-    /// Add Text ボタンタップ時
+    /// 入力されたテキストのimageViewへの配置/あるいはimageViewへの描画を行う
     ///
     /// - Parameter sender: <#sender description#>
     @IBAction func tapAddTextBtn(_ sender: Any) {
-        // 文字が画面上に設定されている
+        // ボタンのラベルが[set]になっている
+        // 文字が画面上に設定されている状態で、イメージにテキストを描画する
         if (self.stampLabel != nil) {
-            setText.setTitle("paste!", for: UIControlState.normal)
             let tempImage = self.drawText(image: mainImage.image!, addText: addText.text!)
             mainImage.image = tempImage
             self.stampLabel.removeFromSuperview()
             self.stampLabel = nil
-            //何度もラベルを画像に貼れるように画像にラベルをセットし終わったらtextFieldを空にする
+            // 何度もラベルを画像に貼れるように画像にラベルをセットし終わったらtextFieldを空にする
             addText.text = nil
+            // 同様にボタンのラベルも戻す
+            setText.setTitle("Add text", for: UIControlState.normal)
             
         } else {
-            // デフォルトの配置位置と文字色を設定し addSubView
+            // ボタンのラベルが[Add text] になっている
+            // デフォルトの配置位置と文字色を設定
             self.stampLabel = UILabel(frame:CGRect(x: 50, y: 50, width: 120, height: 20))
             self.stampLabel.text = addText.text
             
             self.stampLabel.textColor = UIColor.white
             self.stampLabel.backgroundColor = UIColor.clear
             textTempColor = self.stampLabel.textColor
-            
+            // ラベルをビューに追加
             self.mainImage.addSubview(self.stampLabel)
-            // セット時にボタンの文言も変更する
+            // ビューに追加した際に、ボタンのラベルも変更する
             setText.setTitle("set!", for: UIControlState.normal)
         }
     }
@@ -90,8 +91,9 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         super.touchesMoved(touches, with: event)
         
         for touch: AnyObject in touches{
-            let touchLocation = touch.location(in: view)
+            let touchLocation = touch.location(in: mainImage)
             if (self.stampLabel != nil) {
+                self.stampLabel.isUserInteractionEnabled = true
                 self.stampLabel.transform = CGAffineTransform(translationX: touchLocation.x - self.stampLabel.center.x, y: touchLocation.y - self.stampLabel.center.y)
             }
         }
@@ -108,15 +110,13 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
 
     
-    /// 文字を画面上に設定している状態で[paste]をタップした際にイメージにテキストを描画する
+    /// 文字が画面上に設定されている状態で、イメージにテキストを描画する
     ///
     /// - Parameters:
     ///   - image: UIImage
     ///   - addText: String型
     /// - Returns: 生成されたイメージ
     func drawText(image:UIImage, addText:String) -> UIImage{
-        self.inputText = addText
-        
         let imageRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         //空のコンテキスト（保存するための画像）を選択した画像と同じサイズで設定
         UIGraphicsBeginImageContext(image.size);
@@ -155,7 +155,6 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         self.present(saveAlert, animated: true, completion: { () -> Void in
             // 遅延実行 別スレッドで3秒間遅延させている間アラートを表示する。3秒後にアラートを閉じる
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                // your code here
                 self.dismiss(animated: true, completion: nil)
                 //保存が終わったらメインスレッドで作成したimageViewを消す
                 OperationQueue.main.addOperation({
