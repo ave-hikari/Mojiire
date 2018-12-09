@@ -40,6 +40,10 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         self.navigationItem.rightBarButtonItem = saveButton
     }
     
+    
+    /// Add Text ボタンタップ時
+    ///
+    /// - Parameter sender: <#sender description#>
     @IBAction func tapAddTextBtn(_ sender: Any) {
         // 文字が画面上に設定されている
         if (self.stampLabel != nil) {
@@ -66,12 +70,22 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         }
     }
     
-    // タッチ時
+
+    /// タッチ時
+    ///
+    /// - Parameters:
+    ///   - touches: <#touches description#>
+    ///   - event: <#event description#>
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
     
-    // ドラッグ時
+    
+    /// ドラッグ時の挙動
+    ///
+    /// - Parameters:
+    ///   - touches: <#touches description#>
+    ///   - event: <#event description#>
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         
@@ -83,12 +97,23 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         }
     }
     
-    // ドラッグ終了時
+
+    /// ドラッグ終了時
+    ///
+    /// - Parameters:
+    ///   - touches: <#touches description#>
+    ///   - event: <#event description#>
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
+
     
-    // 文字を画面上に設定している状態で[paste]をタップした際にイメージにテキストを描画する
+    /// 文字を画面上に設定している状態で[paste]をタップした際にイメージにテキストを描画する
+    ///
+    /// - Parameters:
+    ///   - image: UIImage
+    ///   - addText: String型
+    /// - Returns: 生成されたイメージ
     func drawText(image:UIImage, addText:String) -> UIImage{
         self.inputText = addText
         
@@ -117,7 +142,10 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         return newImage
     }
     
-    // 作成した画像を保存
+
+    /// 作成した画像を保存
+    ///
+    /// - Parameter sender: UIButton
     @objc func tapSaveButton(sender: UIButton) {
         // UIImage保存
         UIImageWriteToSavedPhotosAlbum(mainImage!.image!, nil, nil, nil)
