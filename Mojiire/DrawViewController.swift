@@ -32,7 +32,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
         addText.delegate = self as? UITextFieldDelegate
         colorPicker.delegate = self
-        colorPicker.dataSource = self as? UIPickerViewDataSource
+        colorPicker.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
