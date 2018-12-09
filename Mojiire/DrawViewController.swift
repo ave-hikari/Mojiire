@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate {
+class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var mainImage: UIImageView!
     
@@ -22,11 +22,17 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     var saveButton: UIBarButtonItem!
     
+    @IBOutlet weak var colorPicker: UIPickerView!
+    
+    let testArr =
+        ["hoge","fuga","piyo"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addText.delegate = self as? UITextFieldDelegate
-        
+        colorPicker.delegate = self
+        colorPicker.dataSource = self as? UIPickerViewDataSource
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -162,5 +168,37 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                 })
             }
         } )
+    }
+    
+    
+    /// UIPickerView Delegate Method
+    ///
+    /// - Parameter pickerView: <#pickerView description#>
+    /// - Returns: <#return value description#>
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    /// UIPickerView Delegate Method
+    ///
+    /// - Parameters:
+    ///   - pickerView: <#pickerView description#>
+    ///   - component: <#component description#>
+    /// - Returns: <#return value description#>
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return testArr.count
+    }
+    
+
+    /// UIPickerView Delegate Method
+    ///
+    /// - Parameters:
+    ///   - pickerView: <#pickerView description#>
+    ///   - row: <#row description#>
+    ///   - component: <#component description#>
+    /// - Returns: <#return value description#>
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return testArr[row]
     }
 }
