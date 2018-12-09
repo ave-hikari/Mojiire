@@ -20,8 +20,6 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     var textTempColor: UIColor!
     
-    var inputText: String!
-    
     var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -119,8 +117,6 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     ///   - addText: String型
     /// - Returns: 生成されたイメージ
     func drawText(image:UIImage, addText:String) -> UIImage{
-        self.inputText = addText
-        
         let imageRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         //空のコンテキスト（保存するための画像）を選択した画像と同じサイズで設定
         UIGraphicsBeginImageContext(image.size);
