@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F50CD0C21BD69E100CB5F1B /* Utiity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F50CD0B21BD69E100CB5F1B /* Utiity.swift */; };
+		2F50CD0E21BECD4100CB5F1B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F50CD0D21BECD4100CB5F1B /* Utility.swift */; };
 		2F9C2939212898F700ACFA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C2938212898F700ACFA0F /* AppDelegate.swift */; };
 		2F9C293B212898F700ACFA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C293A212898F700ACFA0F /* ViewController.swift */; };
 		2F9C293E212898F700ACFA0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C293C212898F700ACFA0F /* Main.storyboard */; };
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F50CD0B21BD69E100CB5F1B /* Utiity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utiity.swift; sourceTree = "<group>"; };
+		2F50CD0D21BECD4100CB5F1B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		2F9C2935212898F700ACFA0F /* Mojiire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mojiire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9C2938212898F700ACFA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F9C293A212898F700ACFA0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				2F9C2941212898F800ACFA0F /* LaunchScreen.storyboard */,
 				2F9C2944212898F800ACFA0F /* Info.plist */,
 				2F9C2966215951C000ACFA0F /* DrawViewController.swift */,
-				2F50CD0B21BD69E100CB5F1B /* Utiity.swift */,
+				2F50CD0D21BECD4100CB5F1B /* Utility.swift */,
 			);
 			path = Mojiire;
 			sourceTree = "<group>";
@@ -262,10 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F50CD0E21BECD4100CB5F1B /* Utility.swift in Sources */,
 				2F9C2967215951C000ACFA0F /* DrawViewController.swift in Sources */,
 				2F9C293B212898F700ACFA0F /* ViewController.swift in Sources */,
 				2F9C2939212898F700ACFA0F /* AppDelegate.swift in Sources */,
-				2F50CD0C21BD69E100CB5F1B /* Utiity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  Utiity.swift
+//  Utility.swift
 //  Mojiire
 //
 //  Created by Hikari Yanagihara on 2018/12/10.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppUtility {
+class Utility {
     
     /// カラーコードをUIColorに変換する
     ///
