@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct LabelColor {
+    var name: String?
+    var color: UIColor?
+}
+
 class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var mainImage: UIImageView!
@@ -26,6 +31,20 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     let testArr =
         ["hoge","fuga","piyo"]
+    
+    var pickColorArr: [LabelColor] = [
+        LabelColor(name: "white", color: Utility.colorWithHexString("ffffff")),
+        LabelColor(name: "black", color: Utility.colorWithHexString("000000")),
+        LabelColor(name: "dodger blue", color: Utility.colorWithHexString("1E90FF")),
+        LabelColor(name: "coral orange", color: Utility.colorWithHexString("ff7f50")),
+        LabelColor(name: "deep pink", color: Utility.colorWithHexString("FF1493")),
+        LabelColor(name: "salmon pink", color: Utility.colorWithHexString("FA8072")),
+        LabelColor(name: "medium seagreen", color: Utility.colorWithHexString("3CB371")),
+        LabelColor(name: "crimson red", color: Utility.colorWithHexString("DC143C")),
+        LabelColor(name: "navy", color: Utility.colorWithHexString("000080")),
+        LabelColor(name: "dark gray", color: Utility.colorWithHexString("a9a9a9")),
+        LabelColor(name: "gold", color: Utility.colorWithHexString("ffd700"))
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
