@@ -29,10 +29,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     @IBOutlet weak var colorPicker: UIPickerView!
     
-    let testArr =
-        ["hoge","fuga","piyo"]
-    
-    var pickColorArr: [LabelColor] = [
+    var pickColorArray: [LabelColor] = [
         LabelColor(name: "white", color: Utility.colorWithHexString("ffffff")),
         LabelColor(name: "black", color: Utility.colorWithHexString("000000")),
         LabelColor(name: "dodger blue", color: Utility.colorWithHexString("1E90FF")),
@@ -206,7 +203,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     ///   - component: <#component description#>
     /// - Returns: <#return value description#>
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return testArr.count
+        return pickColorArray.count
     }
     
 
@@ -218,6 +215,17 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     ///   - component: <#component description#>
     /// - Returns: <#return value description#>
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return testArr[row]
+        return pickColorArray[row].name
+    }
+    
+    
+    /// UIPickerView Delegate Method [Picker Selected]
+    ///
+    /// - Parameters:
+    ///   - pickerView: UIPickerView
+    ///   - row: Int
+    ///   - component: <#component description#>
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        <#code#>
     }
 }
