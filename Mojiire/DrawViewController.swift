@@ -67,7 +67,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBAction func tapAddTextBtn(_ sender: Any) {
         // ボタンのラベルが[set]になっている
         // 文字が画面上に設定されている状態で、イメージにテキストを描画する
-        if (self.stampLabel != nil) {
+        if self.stampLabel != nil {
             let tempImage = self.drawText(image: mainImage.image!, addText: addText.text!)
             mainImage.image = tempImage
             self.stampLabel.removeFromSuperview()
@@ -114,7 +114,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
         for touch: AnyObject in touches{
             let touchLocation = touch.location(in: mainImage)
-            if (self.stampLabel != nil) {
+            if self.stampLabel != nil {
                 self.stampLabel.isUserInteractionEnabled = true
                 self.stampLabel.transform = CGAffineTransform(translationX: touchLocation.x - self.stampLabel.center.x, y: touchLocation.y - self.stampLabel.center.y)
             }
@@ -224,8 +224,11 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     /// - Parameters:
     ///   - pickerView: UIPickerView
     ///   - row: Int
-    ///   - component: <#component description#>
+    ///   - component: Int
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        <#code#>
+        if self.stampLabel != nil {
+            self.stampLabel.textColor = pickColorArray[row].color
+            textTempColor = self.stampLabel.textColor
+        }
     }
 }
