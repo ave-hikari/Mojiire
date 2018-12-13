@@ -8,7 +8,12 @@
 
 import UIKit
 
-class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate {
+struct LabelColor {
+    var name: String?
+    var color: UIColor?
+}
+
+class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var mainImage: UIImageView!
     
@@ -22,11 +27,28 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     var saveButton: UIBarButtonItem!
     
+    @IBOutlet weak var colorPicker: UIPickerView!
+    
+    var pickColorArray: [LabelColor] = [
+        LabelColor(name: "white", color: Utility.colorWithHexString("ffffff")),
+        LabelColor(name: "black", color: Utility.colorWithHexString("000000")),
+        LabelColor(name: "dodger blue", color: Utility.colorWithHexString("1E90FF")),
+        LabelColor(name: "coral orange", color: Utility.colorWithHexString("ff7f50")),
+        LabelColor(name: "deep pink", color: Utility.colorWithHexString("FF1493")),
+        LabelColor(name: "salmon pink", color: Utility.colorWithHexString("FA8072")),
+        LabelColor(name: "medium seagreen", color: Utility.colorWithHexString("3CB371")),
+        LabelColor(name: "crimson red", color: Utility.colorWithHexString("DC143C")),
+        LabelColor(name: "navy", color: Utility.colorWithHexString("000080")),
+        LabelColor(name: "dark gray", color: Utility.colorWithHexString("a9a9a9")),
+        LabelColor(name: "gold", color: Utility.colorWithHexString("ffd700"))
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addText.delegate = self as? UITextFieldDelegate
-        
+        colorPicker.delegate = self
+        colorPicker.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +67,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBAction func tapAddTextBtn(_ sender: Any) {
         // ボタンのラベルが[set]になっている
         // 文字が画面上に設定されている状態で、イメージにテキストを描画する
-        if (self.stampLabel != nil) {
+        if self.stampLabel != nil {
             let tempImage = self.drawText(image: mainImage.image!, addText: addText.text!)
             mainImage.image = tempImage
             self.stampLabel.removeFromSuperview()
@@ -92,7 +114,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
         for touch: AnyObject in touches{
             let touchLocation = touch.location(in: mainImage)
-            if (self.stampLabel != nil) {
+            if self.stampLabel != nil {
                 self.stampLabel.isUserInteractionEnabled = true
                 self.stampLabel.transform = CGAffineTransform(translationX: touchLocation.x - self.stampLabel.center.x, y: touchLocation.y - self.stampLabel.center.y)
             }
@@ -162,5 +184,51 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                 })
             }
         } )
+    }
+    
+    
+    /// UIPickerView Delegate Method
+    ///
+    /// - Parameter pickerView: <#pickerView description#>
+    /// - Returns: <#return value description#>
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    /// UIPickerView Delegate Method
+    ///
+    /// - Parameters:
+    ///   - pickerView: <#pickerView description#>
+    ///   - component: <#component description#>
+    /// - Returns: <#return value description#>
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickColorArray.count
+    }
+    
+
+    /// UIPickerView Delegate Method
+    ///
+    /// - Parameters:
+    ///   - pickerView: <#pickerView description#>
+    ///   - row: <#row description#>
+    ///   - component: <#component description#>
+    /// - Returns: <#return value description#>
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickColorArray[row].name
+    }
+    
+    
+    /// UIPickerView Delegate Method [Picker Selected]
+    ///
+    /// - Parameters:
+    ///   - pickerView: UIPickerView
+    ///   - row: Int
+    ///   - component: Int
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if self.stampLabel != nil {
+            self.stampLabel.textColor = pickColorArray[row].color
+            textTempColor = self.stampLabel.textColor
+        }
     }
 }

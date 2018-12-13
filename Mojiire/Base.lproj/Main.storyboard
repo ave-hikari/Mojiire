@@ -113,11 +113,20 @@
                                     <action selector="tapAddTextBtn:" destination="s4P-5o-yBG" eventType="touchUpInside" id="QaC-3e-GFu"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4c-Bh-mO9">
+                                <rect key="frame" x="0.0" y="552" width="375" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="U0u-mZ-TKc"/>
+                                    <constraint firstAttribute="width" constant="375" id="eos-3q-z2R"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="S4c-Bh-mO9" firstAttribute="centerX" secondItem="zmy-es-txa" secondAttribute="centerX" id="1ho-GL-qhB"/>
                             <constraint firstItem="zmy-es-txa" firstAttribute="trailing" secondItem="JA2-jW-2p6" secondAttribute="trailing" id="4aw-Ry-z0g"/>
                             <constraint firstItem="zmy-es-txa" firstAttribute="top" secondItem="dPF-4g-bA3" secondAttribute="top" constant="40" id="H9H-ZP-qTM"/>
+                            <constraint firstItem="S4c-Bh-mO9" firstAttribute="top" secondItem="fdX-gr-gqf" secondAttribute="bottom" constant="85" id="Nb7-bv-VQv"/>
                             <constraint firstItem="zmy-es-txa" firstAttribute="leading" secondItem="dPF-4g-bA3" secondAttribute="leading" constant="35" id="QBY-Tu-a7X"/>
                             <constraint firstItem="fdX-gr-gqf" firstAttribute="top" secondItem="JA2-jW-2p6" secondAttribute="top" id="Rht-x2-8k6"/>
                             <constraint firstItem="JA2-jW-2p6" firstAttribute="leading" secondItem="fdX-gr-gqf" secondAttribute="trailing" constant="30" id="cQr-5v-1hl"/>
@@ -129,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="addText" destination="fdX-gr-gqf" id="duf-Tx-Chm"/>
+                        <outlet property="colorPicker" destination="S4c-Bh-mO9" id="i6t-6r-s5j"/>
                         <outlet property="mainImage" destination="zmy-es-txa" id="cfm-N1-13i"/>
                         <outlet property="setText" destination="JA2-jW-2p6" id="caz-GJ-WBr"/>
                     </connections>
