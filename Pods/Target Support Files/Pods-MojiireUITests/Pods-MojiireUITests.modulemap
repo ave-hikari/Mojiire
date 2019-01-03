@@ -1,0 +1,6 @@
+framework module Pods_MojiireUITests {
+  umbrella header "Pods-MojiireUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

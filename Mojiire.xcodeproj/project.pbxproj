@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		229EC7A33129AF7DCCA4EC03 /* Pods_MojiireUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74421D67F50EC098C4FF9844 /* Pods_MojiireUITests.framework */; };
 		2F50CD0E21BECD4100CB5F1B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F50CD0D21BECD4100CB5F1B /* Utility.swift */; };
 		2F9C2939212898F700ACFA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C2938212898F700ACFA0F /* AppDelegate.swift */; };
 		2F9C293B212898F700ACFA0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C293A212898F700ACFA0F /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 		2F9C294E212898F800ACFA0F /* MojiireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C294D212898F800ACFA0F /* MojiireTests.swift */; };
 		2F9C2959212898F800ACFA0F /* MojiireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C2958212898F800ACFA0F /* MojiireUITests.swift */; };
 		2F9C2967215951C000ACFA0F /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C2966215951C000ACFA0F /* DrawViewController.swift */; };
+		4B7C6D093AADA68DED449D4F /* Pods_MojiireTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B133F2830F42F128DCF9FC9 /* Pods_MojiireTests.framework */; };
+		B339268E127FC1A0EDA740EE /* Pods_Mojiire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5270795897888811572DDF1B /* Pods_Mojiire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B133F2830F42F128DCF9FC9 /* Pods_MojiireTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MojiireTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F50CD0D21BECD4100CB5F1B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		2F9C2935212898F700ACFA0F /* Mojiire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mojiire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9C2938212898F700ACFA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,14 @@
 		2F9C2958212898F800ACFA0F /* MojiireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiireUITests.swift; sourceTree = "<group>"; };
 		2F9C295A212898F900ACFA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F9C2966215951C000ACFA0F /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
+		4A2F4E35E1327B0F620A7929 /* Pods-Mojiire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mojiire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mojiire/Pods-Mojiire.debug.xcconfig"; sourceTree = "<group>"; };
+		4C94843EEB057D12880033F5 /* Pods-MojiireTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MojiireTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MojiireTests/Pods-MojiireTests.release.xcconfig"; sourceTree = "<group>"; };
+		5270795897888811572DDF1B /* Pods_Mojiire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mojiire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BE38FAF9A5CEC853C0C069F /* Pods-MojiireUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MojiireUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MojiireUITests/Pods-MojiireUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		74421D67F50EC098C4FF9844 /* Pods_MojiireUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MojiireUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A8BD417C135556A65158FC /* Pods-MojiireTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MojiireTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MojiireTests/Pods-MojiireTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB75649A96A9FABD62AF16E3 /* Pods-MojiireUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MojiireUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MojiireUITests/Pods-MojiireUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE85D76994E568EF3EB7B758 /* Pods-Mojiire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mojiire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mojiire/Pods-Mojiire.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B339268E127FC1A0EDA740EE /* Pods_Mojiire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B7C6D093AADA68DED449D4F /* Pods_MojiireTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229EC7A33129AF7DCCA4EC03 /* Pods_MojiireUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,8 @@
 				2F9C294C212898F800ACFA0F /* MojiireTests */,
 				2F9C2957212898F800ACFA0F /* MojiireUITests */,
 				2F9C2936212898F700ACFA0F /* Products */,
+				4ED1E47C92AD6CCB25862283 /* Pods */,
+				D68AB24112D7E5D17AAC9DB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +148,29 @@
 			path = MojiireUITests;
 			sourceTree = "<group>";
 		};
+		4ED1E47C92AD6CCB25862283 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A2F4E35E1327B0F620A7929 /* Pods-Mojiire.debug.xcconfig */,
+				CE85D76994E568EF3EB7B758 /* Pods-Mojiire.release.xcconfig */,
+				74A8BD417C135556A65158FC /* Pods-MojiireTests.debug.xcconfig */,
+				4C94843EEB057D12880033F5 /* Pods-MojiireTests.release.xcconfig */,
+				6BE38FAF9A5CEC853C0C069F /* Pods-MojiireUITests.debug.xcconfig */,
+				AB75649A96A9FABD62AF16E3 /* Pods-MojiireUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D68AB24112D7E5D17AAC9DB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5270795897888811572DDF1B /* Pods_Mojiire.framework */,
+				1B133F2830F42F128DCF9FC9 /* Pods_MojiireTests.framework */,
+				74421D67F50EC098C4FF9844 /* Pods_MojiireUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F9C295D212898F900ACFA0F /* Build configuration list for PBXNativeTarget "Mojiire" */;
 			buildPhases = (
+				2FB6D08CF6880B6E8DF1769E /* [CP] Check Pods Manifest.lock */,
 				2F9C2931212898F700ACFA0F /* Sources */,
 				2F9C2932212898F700ACFA0F /* Frameworks */,
 				2F9C2933212898F700ACFA0F /* Resources */,
+				CD8C3324F8B8FF7B49D40902 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F9C2960212898F900ACFA0F /* Build configuration list for PBXNativeTarget "MojiireTests" */;
 			buildPhases = (
+				BF3A5EDDC7C8809D0747A679 /* [CP] Check Pods Manifest.lock */,
 				2F9C2945212898F800ACFA0F /* Sources */,
 				2F9C2946212898F800ACFA0F /* Frameworks */,
 				2F9C2947212898F800ACFA0F /* Resources */,
@@ -173,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F9C2963212898F900ACFA0F /* Build configuration list for PBXNativeTarget "MojiireUITests" */;
 			buildPhases = (
+				D8F0198153353563596D8EC1 /* [CP] Check Pods Manifest.lock */,
 				2F9C2950212898F800ACFA0F /* Sources */,
 				2F9C2951212898F800ACFA0F /* Frameworks */,
 				2F9C2952212898F800ACFA0F /* Resources */,
@@ -256,6 +300,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FB6D08CF6880B6E8DF1769E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mojiire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF3A5EDDC7C8809D0747A679 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MojiireTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD8C3324F8B8FF7B49D40902 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mojiire/Pods-Mojiire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mojiire/Pods-Mojiire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8F0198153353563596D8EC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MojiireUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F9C2931212898F700ACFA0F /* Sources */ = {
@@ -436,6 +571,7 @@
 		};
 		2F9C295E212898F900ACFA0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A2F4E35E1327B0F620A7929 /* Pods-Mojiire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +589,7 @@
 		};
 		2F9C295F212898F900ACFA0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE85D76994E568EF3EB7B758 /* Pods-Mojiire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +607,7 @@
 		};
 		2F9C2961212898F900ACFA0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A8BD417C135556A65158FC /* Pods-MojiireTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +628,7 @@
 		};
 		2F9C2962212898F900ACFA0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C94843EEB057D12880033F5 /* Pods-MojiireTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +649,7 @@
 		};
 		2F9C2964212898F900ACFA0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BE38FAF9A5CEC853C0C069F /* Pods-MojiireUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -529,6 +669,7 @@
 		};
 		2F9C2965212898F900ACFA0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB75649A96A9FABD62AF16E3 /* Pods-MojiireUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
