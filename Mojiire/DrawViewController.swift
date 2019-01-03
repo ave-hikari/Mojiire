@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 struct LabelColor {
     var name: String?
@@ -30,7 +31,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBOutlet weak var colorPicker: UIPickerView!
     
     var pickColorArray: [LabelColor] = [
-        LabelColor(name: "white", color: Utility.colorWithHexString("ffffff")),
+        LabelColor(name: "white", color: UIColor.flatPink),
         LabelColor(name: "black", color: Utility.colorWithHexString("000000")),
         LabelColor(name: "dodger blue", color: Utility.colorWithHexString("1E90FF")),
         LabelColor(name: "coral orange", color: Utility.colorWithHexString("ff7f50")),
