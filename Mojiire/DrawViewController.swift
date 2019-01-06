@@ -254,18 +254,18 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLb = UILabel()
         let titleName = pickColorArray[row].name
-        let pickerTitle = NSAttributedString(string: titleName!, attributes: [NSAttributedStringKey.font:UIFont(name: "HiraKakuProN-W3", size: 20.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
+        let pickerTitle = NSAttributedString(string: titleName!, attributes: [NSAttributedStringKey.font:UIFont(name: "HiraKakuProN-W3", size: 17.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
         
         pickerLb.attributedText = pickerTitle
         pickerLb.textAlignment = NSTextAlignment.center
         
         // 選択状態のラベルが存在している
         if let lb = pickerView.view(forRow: row, forComponent: component) as? UILabel,
-            let selected = self.pickerLabel {
+            let _ = self.pickerLabel {
             
             self.pickerLabel = lb
-            self.pickerLabel.backgroundColor = UIColor.orange
-            self.pickerLabel.textColor = UIColor.white
+            self.pickerLabel.backgroundColor = pickColorArray[row].color?.darken(byPercentage: 0.5)
+            self.pickerLabel.textColor = pickColorArray[row].color?.lighten(byPercentage: 0.5)
         }
         
         return pickerLb
