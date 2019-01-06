@@ -212,18 +212,6 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         return pickColorArray.count
     }
     
-
-    /// UIPickerView Delegate Method
-    ///
-    /// - Parameters:
-    ///   - pickerView: <#pickerView description#>
-    ///   - row: <#row description#>
-    ///   - component: <#component description#>
-    /// - Returns: <#return value description#>
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickColorArray[row].name
-    }
-    
     
     /// UIPickerView Delegate Method ピッカーが選択されたら呼ばれる
     ///
