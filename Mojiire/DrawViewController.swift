@@ -30,6 +30,8 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     @IBOutlet weak var colorPicker: UIPickerView!
     
+    var pickerLabel: UILabel!
+    
     var pickColorArray: [LabelColor] = [
         LabelColor(name: "White", color: UIColor.flatWhite),
         LabelColor(name: "Black", color: UIColor.flatBlack),
@@ -223,7 +225,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     
     
-    /// UIPickerView Delegate Method [Picker Selected]
+    /// UIPickerView Delegate Method ピッカーが選択されたら呼ばれる
     ///
     /// - Parameters:
     ///   - pickerView: UIPickerView
@@ -234,5 +236,38 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             self.stampLabel.textColor = pickColorArray[row].color
             textTempColor = self.stampLabel.textColor
         }
+        
+        self.pickerLabel = pickerView.view(forRow: row, forComponent: component) as! UILabel
+        // ピッカーのリロードでviewForRowが呼ばれる
+        pickerView.reloadComponent(component)
+    }
+    
+    
+    /// UIPickerView Delegate Method ピッカーに表示するUIView
+    ///
+    /// - Parameters:
+    ///   - pickerView: UIPickerView
+    ///   - row: Int
+    ///   - component: Int
+    ///   - view: UIView
+    /// - Returns: UIView
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLb = UILabel()
+        let titleName = pickColorArray[row].name
+        let pickerTitle = NSAttributedString(string: titleName!, attributes: [NSAttributedStringKey.font:UIFont(name: "HiraKakuProN-W3", size: 20.0)!,NSAttributedStringKey.foregroundColor:UIColor.black])
+        
+        pickerLb.attributedText = pickerTitle
+        pickerLb.textAlignment = NSTextAlignment.center
+        
+        // 選択状態のラベルが存在している
+        if let lb = pickerView.view(forRow: row, forComponent: component) as? UILabel,
+            let selected = self.pickerLabel {
+            
+            self.pickerLabel = lb
+            self.pickerLabel.backgroundColor = UIColor.orange
+            self.pickerLabel.textColor = UIColor.white
+        }
+        
+        return pickerLb
     }
 }
