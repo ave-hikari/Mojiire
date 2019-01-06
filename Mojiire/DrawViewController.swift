@@ -31,17 +31,20 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBOutlet weak var colorPicker: UIPickerView!
     
     var pickColorArray: [LabelColor] = [
-        LabelColor(name: "white", color: UIColor.flatPink),
-        LabelColor(name: "black", color: Utility.colorWithHexString("000000")),
-        LabelColor(name: "dodger blue", color: Utility.colorWithHexString("1E90FF")),
-        LabelColor(name: "coral orange", color: Utility.colorWithHexString("ff7f50")),
-        LabelColor(name: "deep pink", color: Utility.colorWithHexString("FF1493")),
-        LabelColor(name: "salmon pink", color: Utility.colorWithHexString("FA8072")),
-        LabelColor(name: "medium seagreen", color: Utility.colorWithHexString("3CB371")),
-        LabelColor(name: "crimson red", color: Utility.colorWithHexString("DC143C")),
-        LabelColor(name: "navy", color: Utility.colorWithHexString("000080")),
-        LabelColor(name: "dark gray", color: Utility.colorWithHexString("a9a9a9")),
-        LabelColor(name: "gold", color: Utility.colorWithHexString("ffd700"))
+        LabelColor(name: "White", color: UIColor.flatWhite),
+        LabelColor(name: "Black", color: UIColor.flatBlack),
+        LabelColor(name: "Navy", color: UIColor.flatNavyBlue),
+        LabelColor(name: "Blue", color: UIColor.flatBlue),
+        LabelColor(name: "Skyblue", color: UIColor.flatSkyBlue),
+        LabelColor(name: "Purple", color: UIColor.flatPurple),
+        LabelColor(name: "Magenta", color: UIColor.flatMagenta),
+        LabelColor(name: "Pink", color: UIColor.flatPink),
+        LabelColor(name: "Watermelon", color: UIColor.flatWatermelon),
+        LabelColor(name: "Red", color: UIColor.flatRed),
+        LabelColor(name: "Orange", color: UIColor.flatOrange),
+        LabelColor(name: "Yellow", color: UIColor.flatYellow),
+        LabelColor(name: "Green", color: UIColor.flatGreen),
+        LabelColor(name: "Mint", color: UIColor.flatMint)
     ]
     
     override func viewDidLoad() {
@@ -84,7 +87,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             self.stampLabel = UILabel(frame:CGRect(x: 50, y: 50, width: 120, height: 20))
             self.stampLabel.text = addText.text
             
-            self.stampLabel.textColor = UIColor.white
+            self.stampLabel.textColor = UIColor.flatWhiteDark
             self.stampLabel.backgroundColor = UIColor.clear
             textTempColor = self.stampLabel.textColor
             // ラベルをビューに追加
