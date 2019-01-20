@@ -51,6 +51,7 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.hidesNavigationBarHairline = true
         
         addText.delegate = self as? UITextFieldDelegate
         colorPicker.delegate = self
