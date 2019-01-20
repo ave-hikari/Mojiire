@@ -252,8 +252,8 @@ class DrawViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             let _ = self.pickerLabel {
             
             self.pickerLabel = lb
-            self.pickerLabel.backgroundColor = pickColorArray[row].color?.darken(byPercentage: 0.5)
-            self.pickerLabel.textColor = pickColorArray[row].color?.lighten(byPercentage: 0.5)
+            self.pickerLabel.backgroundColor = pickColorArray[row].color
+            self.pickerLabel.textColor = ContrastColorOf(self.pickerLabel.backgroundColor!, returnFlat: true)
         }
         
         return pickerLb
